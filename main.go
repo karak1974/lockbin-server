@@ -1,0 +1,22 @@
+package main
+
+import (
+	"log/slog"
+	"net/http"
+
+	"github.com/go-chi/chi"
+
+	"lockbin_server/router"
+)
+
+func main() {
+	r := chi.NewRouter()
+
+	r.Get("/record", router.GetRecord)
+	r.Post("/record", router.CreateRecord)
+
+	slog.Info("Starting Lockbin server")
+	if err := http.ListenAndServe(":8080", r); err != nil {
+		slog.Error("Couldn't start Lockbin server", slog.Any("error", err))
+	}
+}
