@@ -1,9 +1,13 @@
 package types
 
 type Record struct {
-	UUID       string `json:"uuid"`
 	MasterKey  string `json:"master_key"`
-	UnlockTime int    `json:"unlock_time"`
-	DeleteTime int    `json:"delete_time"`
+	UnlockTime int64  `json:"unlock_time"`
+	DeleteTime int64  `json:"delete_time"`
 	Message    string `json:"message"`
+}
+
+type Message struct {
+	Status  string `json:"status"`
+	Message string `json:"message"`
 }

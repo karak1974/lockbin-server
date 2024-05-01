@@ -6,7 +6,10 @@ services:
       - 5432:5432
     environment:
       POSTGRES_USER: lockbin
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: Password123
     volumes:
-      - ./data/sql:/docker-entrypoint-initdb.d
+      - ./data/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./data/timescaledb:/var/lib/postgresql/data
+
+#environment:
+# LOCKBIN_HOST: timescaledb

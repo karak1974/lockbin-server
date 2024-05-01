@@ -12,7 +12,7 @@ import (
 func main() {
 	r := chi.NewRouter()
 
-	r.Get("/record", router.GetRecord)
+	r.Get("/record/{id:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}}", router.GetRecord)
 	r.Post("/record", router.CreateRecord)
 
 	slog.Info("Starting Lockbin server")
