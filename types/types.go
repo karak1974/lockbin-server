@@ -7,10 +7,10 @@ import (
 )
 
 type Record struct {
-	MasterKey  string `json:"master_key"`
+	MasterKey  string `json:"master_key,omitempty"`
 	UnlockTime int64  `json:"unlock_time"`
 	DeleteTime int64  `json:"delete_time"`
-	Message    string `json:"message"`
+	Message    string `json:"message,omitempty"`
 }
 
 func (r Record) Verify() error {

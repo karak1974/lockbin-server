@@ -18,7 +18,7 @@ The server don't know the data due the client side encryption.
 
 ## Roadmap
 This will move the main repo soon™
-- [ ] Server able to handle requests and store data properly
+- [x] Server able to handle requests and store data properly
 - [ ] Creating private servers - Add optional password protection, not letting anyone use the server
 - [ ] Creating client in Go
 - [ ] Adding client side encryption
