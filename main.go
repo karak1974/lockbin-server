@@ -17,6 +17,6 @@ func main() {
 
 	slog.Info("Starting Lockbin server")
 	if err := http.ListenAndServe(":8080", r); err != nil {
-		slog.Error("Couldn't start Lockbin server", slog.Any("error", err))
+		slog.Error("Couldn't start Lockbin server", slog.String("error", err.Error()))
 	}
 }
